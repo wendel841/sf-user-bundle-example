@@ -1,0 +1,16 @@
+Core\Bundle\UserBundle\Doctrine\ORM\Entity\User:
+    exclusion_policy: ALL
+    xml_root_name: app_user
+    properties:
+        uuid:
+            expose: true
+            type: string
+            groups: [Default, Detailed]
+        firstName:
+            expose: true
+            type: string
+            groups: [Default, Detailed]
+        lastName:
+            expose: true
+            type: string
+            groups: [Default, Detailed]

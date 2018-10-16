@@ -1,0 +1,27 @@
+services:
+    Core\Bundle\UserBundle\Form\Type\UserRegistrationType:
+        autowire: true
+        arguments:
+            $dataClass: '%sylius.model.crm_user.class%'
+        tags:
+            - { name: form.type }
+
+    Core\Bundle\UserBundle\EventListener\CanonicalizerListener:
+        arguments:
+            - '@sylius.canonicalizer'
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+
+    Core\Bundle\UserBundle\EventListener\UserAwareListener:
+        autowire: true
+        tags:
+            - { name: doctrine.event_subscriber }
+
+    Core\Bundle\UserBundle\Provider\UserProvider:
+        autowire: true
+        arguments:
+            $doctrine: '@doctrine'
+
+    Core\Bundle\UserBundle\Provider\UserProviderInterface:
+        alias: Core\Bundle\UserBundle\Provider\UserProvider

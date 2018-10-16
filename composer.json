@@ -1,0 +1,32 @@
+{
+	"name": "core/user-bundle",
+	"type": "symfony-bundle",
+	"description": "UserBundle",
+	"keywords": ["user"],
+	"homepage": "http://dotdev.ru",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Iv Po",
+			"email": "me@dotdev.ru"
+		}
+	],
+	"require": {
+		"php": ">=7",
+		"sylius/user-bundle": "^1.2"
+	},
+    "autoload": {
+        "psr-4": { "Core\\Bundle\\UserBundle\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": { "Core\\Bundle\\UserBundle\\Tests\\": "Tests/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

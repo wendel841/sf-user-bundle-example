@@ -1,0 +1,13 @@
+#imports:
+#    - { resource: '@SyliusUserBundle/Resources/config/app/config.yml' }
+
+jms_serializer:
+    metadata:
+        directories:
+            sylius-user:
+                namespace_prefix: "Sylius\\Component\\User"
+                path: "@CoreUserBundle/Resources/config/serializer"
+
+            CoreUserBundle:
+                namespace_prefix: "Core\\Bundle\\UserBundle\\Doctrine\\ORM"
+                path: "@CoreUserBundle/Resources/config/serializer"
